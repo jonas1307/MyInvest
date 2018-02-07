@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyInvest.Infrastructure.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyInvest.Presentation.Mvc", "MyInvest.Presentation.Mvc\MyInvest.Presentation.Mvc.csproj", "{23B4D949-A19F-4B0C-BDA0-84B72F87EC1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyInvest.Infrastructure.Crosscutting.IoC", "MyInvest.Infrastructure.Crosscutting.IoC\MyInvest.Infrastructure.Crosscutting.IoC.csproj", "{C6EAD1BD-6550-4135-AABB-D6375C60A338}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{23B4D949-A19F-4B0C-BDA0-84B72F87EC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23B4D949-A19F-4B0C-BDA0-84B72F87EC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23B4D949-A19F-4B0C-BDA0-84B72F87EC1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6EAD1BD-6550-4135-AABB-D6375C60A338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6EAD1BD-6550-4135-AABB-D6375C60A338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6EAD1BD-6550-4135-AABB-D6375C60A338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6EAD1BD-6550-4135-AABB-D6375C60A338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{3A23B544-FBE7-43B4-9541-3BD0487C0123} = {2D261120-17F4-4B0D-8C41-CC6EE7314FC9}
 		{14780E28-FB65-4411-BE40-83C4D51C7024} = {8A1C8A07-4A4F-4503-923E-9EF8F3905428}
 		{23B4D949-A19F-4B0C-BDA0-84B72F87EC1F} = {FCA56E33-EE51-48A3-BA75-4780666D446A}
+		{C6EAD1BD-6550-4135-AABB-D6375C60A338} = {2510875A-0FF7-44EE-A572-77F42A4A954D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0C86FC7-2477-4CEB-8C75-438732208686}
