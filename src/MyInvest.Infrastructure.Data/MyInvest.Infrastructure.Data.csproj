@@ -48,15 +48,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyInvestContext.cs" />
+    <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EntityConfig\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyInvest.Domain\MyInvest.Domain.csproj">
+      <Project>{3A23B544-FBE7-43B4-9541-3BD0487C0123}</Project>
+      <Name>MyInvest.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

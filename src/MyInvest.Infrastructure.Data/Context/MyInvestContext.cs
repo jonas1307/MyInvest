@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using MyInvest.Domain.Entities;
+using MyInvest.Infrastructure.Data.EntityConfig;
+using System.Data.Entity;
 
 namespace MyInvest.Infrastructure.Data.Context
 {
@@ -13,9 +15,20 @@ namespace MyInvest.Infrastructure.Data.Context
         #endregion
 
         #region Properties
+
+        DbSet<Usuario> Usuarios { get; set; }
+
         #endregion
 
         #region Methods
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new UsuarioConfig());
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         #endregion
     }
 }
