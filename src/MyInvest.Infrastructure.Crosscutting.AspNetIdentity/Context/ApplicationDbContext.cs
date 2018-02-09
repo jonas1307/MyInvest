@@ -1,13 +1,12 @@
-﻿using System;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using MyInvest.Infrastructure.Crosscutting.AspNetIdentity.Model;
 
 namespace MyInvest.Infrastructure.Crosscutting.AspNetIdentity.Context
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IDisposable
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MyInvest", throwIfV1Schema: false)
         {
         }
 
