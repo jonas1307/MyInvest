@@ -49,6 +49,9 @@
     <Reference Include="SimpleInjector, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.0.12\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.4.0.12\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
@@ -61,9 +64,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyInvest.Application\MyInvest.Application.csproj">
+      <Project>{B6A316CC-24A2-498E-9295-297442EE7418}</Project>
+      <Name>MyInvest.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyInvest.Domain\MyInvest.Domain.csproj">
+      <Project>{3A23B544-FBE7-43B4-9541-3BD0487C0123}</Project>
+      <Name>MyInvest.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyInvest.Infrastructure.Crosscutting.AspNetIdentity\MyInvest.Infrastructure.Crosscutting.AspNetIdentity.csproj">
       <Project>{05C2F638-9806-495C-8FC2-95A45F28D376}</Project>
       <Name>MyInvest.Infrastructure.Crosscutting.AspNetIdentity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyInvest.Infrastructure.Data\MyInvest.Infrastructure.Data.csproj">
+      <Project>{14780E28-FB65-4411-BE40-83C4D51C7024}</Project>
+      <Name>MyInvest.Infrastructure.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
