@@ -30,6 +30,7 @@ namespace MyInvest.Infrastructure.Data.Context
         {
             modelBuilder.Configurations.Add(new UsuarioConfig());
             modelBuilder.Configurations.Add(new TipoInstituicaoFinanceiraConfig());
+            modelBuilder.Configurations.Add(new TipoInvestimentoConfig());
 
             base.OnModelCreating(modelBuilder);
         }
