@@ -1,6 +1,8 @@
-﻿using MyInvest.Domain.Entities;
+﻿using System;
+using MyInvest.Domain.Entities;
 using MyInvest.Infrastructure.Data.EntityConfig;
 using System.Data.Entity;
+using System.Linq;
 
 namespace MyInvest.Infrastructure.Data.Context
 {
@@ -33,6 +35,33 @@ namespace MyInvest.Infrastructure.Data.Context
             modelBuilder.Configurations.Add(new TipoInvestimentoConfig());
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        public override int SaveChanges()
+        {
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                        break;
+                    case EntityState.Modified:
+                        entry.Property("DataCadastro").IsModified = false;
+                        break;
+                }
+            }
+
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataAtualizacao") != null))
+            {
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("DataAtualizacao").IsModified = true;
+                    entry.Property("DataAtualizacao").CurrentValue = DateTime.Now;
+                }
+            }
+
+            return base.SaveChanges();
         }
 
         #endregion
