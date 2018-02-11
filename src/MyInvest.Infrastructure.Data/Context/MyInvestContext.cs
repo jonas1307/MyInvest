@@ -16,9 +16,11 @@ namespace MyInvest.Infrastructure.Data.Context
 
         #region Properties
 
-        DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
-        private DbSet<TipoInstituicaoFinanceira> TiposInstituicoesFinanceiras { get; set; }
+        public DbSet<TipoInstituicaoFinanceira> TiposInstituicoesFinanceiras { get; set; }
+
+        public DbSet<TipoInvestimento> TipoInvestimentos { get; set; }
 
         #endregion
 
