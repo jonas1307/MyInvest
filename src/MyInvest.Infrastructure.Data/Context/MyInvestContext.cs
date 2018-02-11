@@ -18,6 +18,8 @@ namespace MyInvest.Infrastructure.Data.Context
 
         DbSet<Usuario> Usuarios { get; set; }
 
+        private DbSet<TipoInstituicaoFinanceira> TiposInstituicoesFinanceiras { get; set; }
+
         #endregion
 
         #region Methods
@@ -25,6 +27,7 @@ namespace MyInvest.Infrastructure.Data.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UsuarioConfig());
+            modelBuilder.Configurations.Add(new TipoInstituicaoFinanceiraConfig());
 
             base.OnModelCreating(modelBuilder);
         }
