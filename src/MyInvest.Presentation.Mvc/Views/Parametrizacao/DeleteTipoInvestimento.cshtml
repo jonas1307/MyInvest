@@ -34,7 +34,7 @@
 
 @section scripts
 {
-    <script type="text/javascript">
+<script type="text/javascript">
         $(function() {
             $('#Confirm').click(function() {
                 $.ajax({
@@ -44,18 +44,18 @@
                     success: function(data) {
                         if (data) {
                             alert('Exclusão realizada.');
-                            window.location.href = '@Url.Action("TipoInvestimento", "Parametrizacao")';
                         } else {
                             alert('Erro ao excluir. Tente novamente mais tarde.');
-                            window.location.href = '@Url.Action("TipoInvestimento", "Parametrizacao")';
                         }
+
+                        window.location.href = '@Url.Action("IndexTipoInvestimento", "Parametrizacao")';
                     }
                 });
             });
 
             $('#Cancel').click(function () {
-                window.location.href = '@Url.Action("TipoInvestimento", "Parametrizacao")';
+                window.location.href = '@Url.Action("IndexTipoInvestimento", "Parametrizacao")';
             });
         });
-    </script>
+</script>
 }

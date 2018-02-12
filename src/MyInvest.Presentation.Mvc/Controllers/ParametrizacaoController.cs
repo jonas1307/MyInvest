@@ -19,7 +19,7 @@ namespace MyInvest.Presentation.Mvc.Controllers
 
         [Route("Parametrizacao/TipoInvestimento")]
         [Route("Parametrizacao/TipoInvestimento/Index")]
-        public ActionResult TipoInvestimento()
+        public ActionResult IndexTipoInvestimento()
         {
             var model = _tipoInvestimentoService.GetAll().ToList();
 
@@ -80,7 +80,7 @@ namespace MyInvest.Presentation.Mvc.Controllers
                 _tipoInvestimentoService.Update(data);
             }
 
-            return RedirectToAction("TipoInvestimento");
+            return RedirectToAction("IndexTipoInvestimento");
         }
 
         [HttpPost]

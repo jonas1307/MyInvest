@@ -22,7 +22,7 @@
         foreach (var item in Model)
         {
             <tr>
-                <td><a href="@Url.Action("EditarTipoInvestimento", "Parametrizacao", new { id = item.CodTipoInvestimento })">@item.CodTipoInvestimento</a></td>
+                <td>@item.CodTipoInvestimento</td>
                 <td>@item.Descricao</td>
                 <td>@item.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")</td>
                 <td><a href="@Url.Action("EditarTipoInvestimento", "Parametrizacao", new { id = item.CodTipoInvestimento })">Editar</a> | <a href="@Url.Action("ExcluirTipoInvestimento", "Parametrizacao", new { id = item.CodTipoInvestimento })">Excluir</a> </td>
