@@ -1,5 +1,5 @@
-﻿using MyInvest.Domain.Entities;
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
+using MyInvest.Domain.Entities;
 
 namespace MyInvest.Infrastructure.Data.EntityConfig
 {

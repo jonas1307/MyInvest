@@ -23,7 +23,7 @@ namespace MyInvest.Infrastructure.Crosscutting.AspNetIdentity.Configuration
                 RequireNonLetterOrDigit = true,
                 RequireDigit = false,
                 RequireLowercase = false,
-                RequireUppercase = false,
+                RequireUppercase = false
             };
 
             // Account Lockout

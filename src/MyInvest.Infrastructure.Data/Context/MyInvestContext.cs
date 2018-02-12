@@ -1,9 +1,9 @@
 ﻿using System;
-using MyInvest.Domain.Entities;
-using MyInvest.Infrastructure.Data.EntityConfig;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using MyInvest.Domain.Entities;
+using MyInvest.Infrastructure.Data.EntityConfig;
 
 namespace MyInvest.Infrastructure.Data.Context
 {

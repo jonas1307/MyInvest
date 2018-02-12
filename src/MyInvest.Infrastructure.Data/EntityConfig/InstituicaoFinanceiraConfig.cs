@@ -1,5 +1,4 @@
-﻿using System.Data.Entity.Migrations.Model;
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
 using MyInvest.Domain.Entities;
 
 namespace MyInvest.Infrastructure.Data.EntityConfig
