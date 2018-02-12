@@ -16,8 +16,9 @@ namespace MyInvest.Presentation.Mvc.Controllers
         {
             _tipoInvestimentoService = tipoInvestimentoService;
         }
-        
-        // GET: Parametrizacao/TipoInvestimento
+
+        [Route("Parametrizacao/TipoInvestimento")]
+        [Route("Parametrizacao/TipoInvestimento/Index")]
         public ActionResult TipoInvestimento()
         {
             var model = _tipoInvestimentoService.GetAll().ToList();
@@ -25,13 +26,13 @@ namespace MyInvest.Presentation.Mvc.Controllers
             return View("IndexTipoInvestimento", model);
         }
 
-        // GET: Parametrizacao/NovoTipoInvestimento
+        [Route("Parametrizacao/TipoInvestimento/Novo")]
         public ActionResult NovoTipoInvestimento()
         {
             return View("FormTipoInvestimento", new TipoInvestimentoViewModel());
         }
 
-        // GET: Parametrizacao/EditarTipoInvestimento/1
+        [Route("Parametrizacao/TipoInvestimento/Editar/{id:long}")]
         public ActionResult EditarTipoInvestimento(long id)
         {
             var data = _tipoInvestimentoService.GetById(id);
@@ -44,7 +45,7 @@ namespace MyInvest.Presentation.Mvc.Controllers
             return View("FormTipoInvestimento", model);
         }
 
-        // GET: Parametrizacao/ExcluirTipoInvestimento/1
+        [Route("Parametrizacao/TipoInvestimento/Excluir/{id:long}")]
         public ActionResult ExcluirTipoInvestimento(long id)
         {
             var data = _tipoInvestimentoService.GetById(id);
@@ -62,6 +63,7 @@ namespace MyInvest.Presentation.Mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Parametrizacao/TipoInvestimento/Salvar")]
         public ActionResult SalvarTipoInvestimento(TipoInvestimentoViewModel model)
         {
             if (!ModelState.IsValid)
@@ -82,6 +84,7 @@ namespace MyInvest.Presentation.Mvc.Controllers
         }
 
         [HttpPost]
+        [Route("Parametrizacao/TipoInvestimento/ConfirmaExcluir/{id:long}")]
         public JsonResult ConfirmaExclusaoTipoInvestimento(long id)
         {
             bool sucesso;
