@@ -2,6 +2,7 @@
 using MyInvest.Domain.Entities;
 using MyInvest.Infrastructure.Data.EntityConfig;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 
 namespace MyInvest.Infrastructure.Data.Context
@@ -30,6 +31,16 @@ namespace MyInvest.Infrastructure.Data.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // remove pluralizing and cascade deletion conventions
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            // string properties
+            modelBuilder.Properties<string>().Configure(p => p.HasColumnType("VARCHAR"));
+            modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(256));
+
+            // entity configurations
             modelBuilder.Configurations.Add(new UsuarioConfig());
             modelBuilder.Configurations.Add(new TipoInstituicaoFinanceiraConfig());
             modelBuilder.Configurations.Add(new TipoInvestimentoConfig());
