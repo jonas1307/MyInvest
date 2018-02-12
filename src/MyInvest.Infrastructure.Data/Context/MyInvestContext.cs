@@ -23,7 +23,7 @@ namespace MyInvest.Infrastructure.Data.Context
 
         public DbSet<TipoInstituicaoFinanceira> TiposInstituicoesFinanceiras { get; set; }
 
-        public DbSet<TipoInvestimento> TipoInvestimentos { get; set; }
+        public DbSet<TipoInvestimento> TiposInvestimentos { get; set; }
 
         #endregion
 
