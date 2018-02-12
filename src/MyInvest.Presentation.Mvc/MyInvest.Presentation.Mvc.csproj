@@ -295,7 +295,7 @@
     <Content Include="Views\Parametrizacao\IndexTipoInvestimento.cshtml" />
     <Content Include="Views\Parametrizacao\FormTipoInvestimento.cshtml" />
     <Content Include="Views\Parametrizacao\DeleteTipoInvestimento.cshtml" />
-    <Content Include="Views\Parametrizacao\IndexTipoInstituicaoFinanceira.cshtml" />
+    <Content Include="Views\Parametrizacao\IndexTipoInstituicao.cshtml" />
     <Content Include="Views\Parametrizacao\FormTipoInstituicao.cshtml" />
     <Content Include="Views\Parametrizacao\DeleteTipoInstituicao.cshtml" />
   </ItemGroup>

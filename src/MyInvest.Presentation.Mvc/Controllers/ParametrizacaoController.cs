@@ -25,7 +25,7 @@ namespace MyInvest.Presentation.Mvc.Controllers
         {
             var model = _tipoInstituicaoFinanceiraService.GetAll().ToList();
 
-            return View("IndexTipoInstituicaoFinanceira", model);
+            return View("IndexTipoInstituicao", model);
         }
 
         [Route("Parametrizacao/TipoInvestimento")]
