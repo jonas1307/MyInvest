@@ -9,6 +9,7 @@ namespace MyInvest.Presentation.Mvc.AutoMapper
         public ViewModelToDomainProfile()
         {
             CreateMap<TipoInvestimentoViewModel, TipoInvestimento>();
+            CreateMap<TipoInstituicaoFinanceiraViewModel, TipoInstituicaoFinanceira>();
         }
     }
 }

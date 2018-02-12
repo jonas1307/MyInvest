@@ -1,0 +1,61 @@
+﻿@model MyInvest.Presentation.Mvc.ViewModels.TipoInstituicaoFinanceiraViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+<p>@ViewBag.Message</p>
+<br />
+
+<div class="form-control">
+    @Html.LabelFor(m => m.CodTipoInstituicaoFinanceira)
+    @Html.HiddenFor(m => m.CodTipoInstituicaoFinanceira)
+    @Html.DisplayTextFor(m => m.CodTipoInstituicaoFinanceira)
+</div>
+
+<div class="form-control">
+    @Html.LabelFor(m => m.Descricao)
+    @Html.HiddenFor(m => m.Descricao)
+    @Html.DisplayTextFor(m => m.Descricao)
+</div>
+
+<div class="form-control">
+    @Html.LabelFor(m => m.DataCadastro)
+    @Html.HiddenFor(m => m.DataCadastro)
+    @Html.DisplayTextFor(m => m.DataCadastro)
+</div>
+
+<div class="form-control">
+    <button id="Confirm" class="btn btn-primary">Sim</button>
+    <button id="Cancel" class="btn btn-secondary">Não</button>
+</div>
+
+@section scripts
+{
+<script type="text/javascript">
+        $(function() {
+            $('#Confirm').click(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("ConfirmaExclusaoTipoInstituicao", "Parametrizacao")',
+                    data: {'id': @Model.CodTipoInstituicaoFinanceira},
+                    success: function(data) {
+                        if (data) {
+                            alert('Exclusão realizada.');
+                        } else {
+                            alert('Erro ao excluir. Tente novamente mais tarde.');
+                        }
+
+                        window.location.href = '@Url.Action("IndexTipoInstituicaoFinanceira", "Parametrizacao")';
+                    }
+                });
+            });
+
+            $('#Cancel').click(function () {
+                window.location.href = '@Url.Action("IndexTipoInstituicaoFinanceira", "Parametrizacao")';
+            });
+        });
+</script>
+}

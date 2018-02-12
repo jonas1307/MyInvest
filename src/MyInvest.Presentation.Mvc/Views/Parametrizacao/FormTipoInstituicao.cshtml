@@ -1,0 +1,24 @@
+﻿@model MyInvest.Presentation.Mvc.ViewModels.TipoInstituicaoFinanceiraViewModel
+
+@{
+    ViewBag.Title = $"{(Model.CodTipoInstituicaoFinanceira == 0 ? "Novo" : "Editar")} Tipo de Instituição Financeira";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Titulo</h2>
+<br />
+@using (Html.BeginForm("SalvarTipoInstituicao", "Parametrizacao", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.CodTipoInstituicaoFinanceira)
+    @Html.HiddenFor(m => m.DataCadastro)
+
+    <div class="form-control">
+        @Html.LabelFor(m => m.Descricao)
+        @Html.TextBoxFor(m => m.Descricao)
+        @Html.ValidationMessageFor(m => m.Descricao)
+    </div>
+    <div class="form-control">
+        <button class="btn btn-primary" type="submit">Salvar</button>
+    </div>
+}
