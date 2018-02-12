@@ -25,6 +25,8 @@ namespace MyInvest.Infrastructure.Data.Context
 
         public DbSet<TipoInvestimento> TiposInvestimentos { get; set; }
 
+        public DbSet<InstituicaoFinanceira> InstituicoesFinanceiras { get; set; }
+
         #endregion
 
         #region Methods
@@ -44,6 +46,7 @@ namespace MyInvest.Infrastructure.Data.Context
             modelBuilder.Configurations.Add(new UsuarioConfig());
             modelBuilder.Configurations.Add(new TipoInstituicaoFinanceiraConfig());
             modelBuilder.Configurations.Add(new TipoInvestimentoConfig());
+            modelBuilder.Configurations.Add(new InstituicaoFinanceiraConfig());
 
             base.OnModelCreating(modelBuilder);
         }

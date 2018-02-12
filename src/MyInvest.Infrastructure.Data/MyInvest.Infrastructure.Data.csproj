@@ -48,11 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MyInvestContext.cs" />
+    <Compile Include="EntityConfig\InstituicaoFinanceiraConfig.cs" />
     <Compile Include="EntityConfig\TipoInvestimentoConfig.cs" />
     <Compile Include="EntityConfig\TipoInstituicaoFinanceiraConfig.cs" />
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\InstituicaoFinanceiraRepository.cs" />
     <Compile Include="Repositories\TipoInvestimentoRepository.cs" />
     <Compile Include="Repositories\TipoInstituicaoFinanceiraRepository.cs" />
   </ItemGroup>

@@ -29,16 +29,19 @@ namespace MyInvest.Infrastructure.Crosscutting.IoC
             container.Register(typeof(IAppServiceBase<>), typeof(AppServiceBase<>), Lifestyle.Scoped);
             container.Register<ITipoInvestimentoAppService, TipoInvestimentoAppService>(Lifestyle.Scoped);
             container.Register<ITipoInstituicaoFinanceiraAppService, TipoInstituicaoFinanceiraAppService>(Lifestyle.Scoped);
+            container.Register<IInstituicaoFinanceiraAppService, InstituicaoFinanceiraAppService>(Lifestyle.Scoped);
 
             // Services
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
             container.Register<ITipoInvestimentoService, TipoInvestimentoService>(Lifestyle.Scoped);
             container.Register<ITipoInstituicaoFinanceiraService, TipoInstituicaoFinanceiraService>(Lifestyle.Scoped);
+            container.Register<IInstituicaoFinanceiraService, InstituicaoFinanceiraService>(Lifestyle.Scoped);
 
             // Repositories
             container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>), Lifestyle.Scoped);
             container.Register<ITipoInvestimentoRepository, TipoInvestimentoRepository>(Lifestyle.Scoped);
             container.Register<ITipoInstituicaoFinanceiraRepository, TipoInstituicaoFinanceiraRepository>(Lifestyle.Scoped);
+            container.Register<IInstituicaoFinanceiraRepository, InstituicaoFinanceiraRepository>(Lifestyle.Scoped);
         }
     }
 }

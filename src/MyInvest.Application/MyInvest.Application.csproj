@@ -34,7 +34,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppServiceBase.cs" />
+    <Compile Include="InstituicaoFinanceiraAppService.cs" />
     <Compile Include="Interfaces\IAppServiceBase.cs" />
+    <Compile Include="Interfaces\IInstituicaoFinanceiraAppService.cs" />
     <Compile Include="Interfaces\ITipoInvestimentoAppService.cs" />
     <Compile Include="Interfaces\ITipoInstituicaoFinanceiraAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
