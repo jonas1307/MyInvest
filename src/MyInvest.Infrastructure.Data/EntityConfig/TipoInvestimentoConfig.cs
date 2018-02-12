@@ -18,6 +18,9 @@ namespace MyInvest.Infrastructure.Data.EntityConfig
 
             Property(p => p.DataAtualizacao)
                 .IsOptional();
+
+            HasIndex(idx => idx.Descricao)
+                .IsUnique();
         }
     }
 }
