@@ -10,6 +10,7 @@ namespace MyInvest.Presentation.Mvc.AutoMapper
         {
             CreateMap<TipoInvestimentoViewModel, TipoInvestimento>();
             CreateMap<TipoInstituicaoFinanceiraViewModel, TipoInstituicaoFinanceira>();
+            CreateMap<InstituicaoFinanceiraViewModel, InstituicaoFinanceira>();
         }
     }
 }

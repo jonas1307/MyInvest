@@ -1,0 +1,43 @@
+﻿@model List<MyInvest.Domain.Entities.InstituicaoFinanceira>
+
+@{
+    ViewBag.Title = "Instituições Financeiras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Código de Compensação</th>
+        <th>Razão Social</th>
+        <th>CNPJ</th>
+        <th>Data de Cadastro</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CodigoDeCompensacao</td>
+                <td>@item.RazaoSocial</td>
+                <td>@item.Cnpj</td>
+                <td>@item.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                <td><a href="@Url.Action("Editar", "InstituicaoFinanceira", new { id = item.CodInstituicaoFinanceira })">Editar</a> | <a href="@Url.Action("Excluir", "InstituicaoFinanceira", new { id = item.CodInstituicaoFinanceira })">Excluir</a> </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="5">Não existem registros de Instituição Financeira.</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Novo", "InstituicaoFinanceira")" class="btn btn-primary">Criar</a>

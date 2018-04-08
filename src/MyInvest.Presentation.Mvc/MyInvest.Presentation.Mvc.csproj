@@ -199,6 +199,8 @@
     <Compile Include="AutoMapper\DomainToViewModelProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstituicaoFinanceiraController.cs" />
+    <Compile Include="ViewModels\InstituicaoFinanceiraViewModel.cs" />
     <Compile Include="Controllers\ParametrizacaoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -298,6 +300,9 @@
     <Content Include="Views\Parametrizacao\IndexTipoInstituicao.cshtml" />
     <Content Include="Views\Parametrizacao\FormTipoInstituicao.cshtml" />
     <Content Include="Views\Parametrizacao\DeleteTipoInstituicao.cshtml" />
+    <Content Include="Views\InstituicaoFinanceira\Index.cshtml" />
+    <Content Include="Views\InstituicaoFinanceira\FormInstituicaoFinanceira.cshtml" />
+    <Content Include="Views\InstituicaoFinanceira\DeleteInstituicaoFinanceira.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,7 +347,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>10195</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

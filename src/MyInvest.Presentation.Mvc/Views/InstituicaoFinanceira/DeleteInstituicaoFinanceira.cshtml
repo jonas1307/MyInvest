@@ -1,0 +1,72 @@
+﻿@model MyInvest.Presentation.Mvc.ViewModels.InstituicaoFinanceiraViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+<p>@ViewBag.Message</p>
+<br />
+
+<div class="form-control">
+    @Html.LabelFor(m => m.CodInstituicaoFinanceira)
+    @Html.HiddenFor(m => m.CodInstituicaoFinanceira)
+    @Html.DisplayTextFor(m => m.CodInstituicaoFinanceira)
+</div>
+
+<div class="form-control">
+    @Html.LabelFor(m => m.RazaoSocial)
+    @Html.HiddenFor(m => m.RazaoSocial)
+    @Html.DisplayTextFor(m => m.RazaoSocial)
+</div>
+
+<div class="form-control">
+    @Html.LabelFor(m => m.Cnpj)
+    @Html.HiddenFor(m => m.Cnpj)
+    @Html.DisplayTextFor(m => m.Cnpj)
+</div>
+
+<div class="form-control">
+    @Html.LabelFor(m => m.CodigoDeCompensacao)
+    @Html.HiddenFor(m => m.CodigoDeCompensacao)
+    @Html.DisplayTextFor(m => m.CodigoDeCompensacao)
+</div>
+
+<div class="form-control">
+    @Html.LabelFor(m => m.DataCadastro)
+    @Html.HiddenFor(m => m.DataCadastro)
+    @Html.DisplayTextFor(m => m.DataCadastro)
+</div>
+
+<div class="form-control">
+    <button id="Confirm" class="btn btn-primary">Sim</button>
+    <button id="Cancel" class="btn btn-secondary">Não</button>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function() {
+            $('#Confirm').click(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("ConfirmaExclusao", "InstituicaoFinanceira")',
+                    data: {'id': @Model.CodInstituicaoFinanceira},
+                    success: function(data) {
+                        if (data) {
+                            alert('Exclusão realizada.');
+                        } else {
+                            alert('Erro ao excluir. Tente novamente mais tarde.');
+                        }
+
+                        window.location.href = '@Url.Action("Index", "InstituicaoFinanceira")';
+                    }
+                });
+            });
+
+            $('#Cancel').click(function () {
+                window.location.href = '@Url.Action("Index", "InstituicaoFinanceira")';
+            });
+        });
+    </script>
+}

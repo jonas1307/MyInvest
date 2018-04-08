@@ -1,0 +1,50 @@
+﻿@model MyInvest.Presentation.Mvc.ViewModels.InstituicaoFinanceiraViewModel
+
+@{
+    ViewBag.Title = $"{(Model.CodInstituicaoFinanceira == 0 ? "Nova" : "Editar")} Instituição Financeira";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Salvar", "InstituicaoFinanceira", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.CodInstituicaoFinanceira)
+    @Html.HiddenFor(m => m.DataCadastro)
+
+    <div class="form-control">
+        @Html.LabelFor(m => m.RazaoSocial)
+        @Html.TextBoxFor(m => m.RazaoSocial)
+        @Html.ValidationMessageFor(m => m.RazaoSocial)
+    </div>
+    <div class="form-control">
+        @Html.LabelFor(m => m.NomeFantasia)
+        @Html.TextBoxFor(m => m.NomeFantasia)
+        @Html.ValidationMessageFor(m => m.NomeFantasia)
+    </div>
+    <div class="form-control">
+        @Html.LabelFor(m => m.Cnpj)
+        @Html.TextBoxFor(m => m.Cnpj)
+        @Html.ValidationMessageFor(m => m.Cnpj)
+    </div>
+    <div class="form-control">
+        @Html.LabelFor(m => m.CodTipoInstituicaoFinanceira)
+        @Html.DropDownListFor(m => m.CodTipoInstituicaoFinanceira, Model.ListaTipoInstituicaoFinanceira, "---Selecione---")
+        @Html.ValidationMessageFor(m => m.CodTipoInstituicaoFinanceira)
+    </div>
+    <div class="form-control">
+        @Html.LabelFor(m => m.CodigoDeCompensacao)
+        @Html.TextBoxFor(m => m.CodigoDeCompensacao)
+        @Html.ValidationMessageFor(m => m.CodigoDeCompensacao)
+    </div>
+    <div class="form-control">
+        @Html.LabelFor(m => m.HomePage)
+        @Html.TextBoxFor(m => m.HomePage)
+        @Html.ValidationMessageFor(m => m.HomePage)
+    </div>
+    <div class="form-control">
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <a href="@Url.Action("Index", "InstituicaoFinanceira")" class="btn btn-secondary">Voltar</a>
+    </div>
+}
