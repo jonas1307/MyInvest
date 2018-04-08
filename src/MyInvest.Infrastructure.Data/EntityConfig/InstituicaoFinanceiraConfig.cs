@@ -40,8 +40,8 @@ namespace MyInvest.Infrastructure.Data.EntityConfig
                 .WithMany()
                 .HasForeignKey(fk => fk.CodTipoInstituicaoFinanceira);
 
-            HasIndex(idx => idx.CodigoDeCompensacao)
-                .IsUnique();
+            //HasIndex(idx => idx.CodigoDeCompensacao)
+            //    .IsUnique();
 
             HasIndex(idx => idx.Cnpj)
                 .IsUnique();
