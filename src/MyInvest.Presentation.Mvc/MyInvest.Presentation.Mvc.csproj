@@ -200,6 +200,7 @@
     <Compile Include="AutoMapper\ViewModelToDomainProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstituicaoFinanceiraController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="ViewModels\InstituicaoFinanceiraViewModel.cs" />
     <Compile Include="Controllers\ParametrizacaoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -303,6 +304,8 @@
     <Content Include="Views\InstituicaoFinanceira\Index.cshtml" />
     <Content Include="Views\InstituicaoFinanceira\FormInstituicaoFinanceira.cshtml" />
     <Content Include="Views\InstituicaoFinanceira\DeleteInstituicaoFinanceira.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Novo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

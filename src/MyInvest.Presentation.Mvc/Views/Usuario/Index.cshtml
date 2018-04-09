@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MyInvest.Domain.Entities.Usuario>
+
+@{
+    ViewBag.Title = "Usuários";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>title</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayName("Confirmado")
+        </th>
+        <th>
+            @Html.DisplayName("Telefone")
+        </th>
+        <th>
+            @Html.DisplayName("Telefone Confirmado")
+        </th>
+        <th>
+            @Html.DisplayName("Two Factor")
+        </th>
+        <th>
+            @Html.DisplayName("Fim do Bloqueio")
+        </th>
+        <th>
+            @Html.DisplayName("Lock")
+        </th>
+        <th>
+            @Html.DisplayName("Tentativas Inválidas")
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LockoutEnabled)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccessFailedCount)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new {id = item.Id})
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9">Não existem usuários cadastrados.</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+﻿@model MyInvest.Infrastructure.Crosscutting.AspNetIdentity.Model.RegisterViewModel
+
+@{
+    ViewBag.Title = "Novo Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Register", "Usuario", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-control">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    <div class="form-control">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    <div class="form-control">
+        @Html.LabelFor(m => m.ConfirmPassword)
+        @Html.PasswordFor(m => m.ConfirmPassword)
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+    </div>
+    <div class="form-control">
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <a href="@Url.Action("Index", "Usuario")" class="btn btn-secondary">Voltar</a>
+    </div>
+}
