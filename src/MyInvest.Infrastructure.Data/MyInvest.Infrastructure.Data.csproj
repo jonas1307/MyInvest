@@ -58,6 +58,7 @@
     <Compile Include="Repositories\InstituicaoFinanceiraRepository.cs" />
     <Compile Include="Repositories\TipoInvestimentoRepository.cs" />
     <Compile Include="Repositories\TipoInstituicaoFinanceiraRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

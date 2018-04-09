@@ -39,9 +39,11 @@
     <Compile Include="Interfaces\IInstituicaoFinanceiraAppService.cs" />
     <Compile Include="Interfaces\ITipoInvestimentoAppService.cs" />
     <Compile Include="Interfaces\ITipoInstituicaoFinanceiraAppService.cs" />
+    <Compile Include="Interfaces\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoInvestimentoAppService.cs" />
     <Compile Include="TipoInstituicaoFinanceiraAppService.cs" />
+    <Compile Include="UsuarioAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyInvest.Domain\MyInvest.Domain.csproj">

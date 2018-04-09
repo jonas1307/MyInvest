@@ -41,15 +41,18 @@
     <Compile Include="Interfaces\Repositories\IInstituicaoFinanceiraRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITipoInvestimentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITipoInstituicaoFinanceiraRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
     <Compile Include="Interfaces\Services\IInstituicaoFinanceiraService.cs" />
     <Compile Include="Interfaces\Services\ITipoInvestimentoService.cs" />
     <Compile Include="Interfaces\Services\ITipoInstituicaoFinanceiraService.cs" />
+    <Compile Include="Interfaces\Services\IUsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\InstituicaoFinanceiraService.cs" />
     <Compile Include="Services\TipoInvestimentoService.cs" />
     <Compile Include="Services\TipoInstituicaoFinanceiraService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
